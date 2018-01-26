@@ -2,6 +2,7 @@
 
 * {
 	outline: none !important;
+	box-sizing: border-box;
 }
 
 
@@ -13,10 +14,28 @@ html, body {
 
 body {
 	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	color: #4c4c4c;
 }
 
 body, h1 {
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Wikipedia Viewer heading */
+
+.title {
+	font-weight: 300;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 /* Center content both vertically and horizontally */
@@ -40,11 +59,44 @@ body, h1 {
 }
 
 .form-search input {
-	border: 0;
 	padding: 0;
 	width: 100%;
 	height: 80px;
 	font-size: 20px;
+	border: 1px solid #bebebe;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 20px;
+}
+
+/* Styles for input placeholder with support for different browsers */
+.form-search input::-webkit-input-placeholder {
+	font-family: 'Open-Sans', sans-serif;
+	font-weight: 300;
+	color: #a5a5a5;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.form-search input::-moz-placeholder {
+	font-family: 'Open-Sans', sans-serif;
+	font-weight: 300;
+	color: #a5a5a5;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.form-search input::-ms-input-placeholder {
+	font-family: 'Open-Sans', sans-serif;
+	font-weight: 300;
+	color: #a5a5a5;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.form-search input::-o-input-placeholder {
+	font-family: 'Open-Sans', sans-serif;
+	font-weight: 300;
+	color: #a5a5a5;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .btn {
@@ -52,7 +104,42 @@ body, h1 {
 	padding: 0;
 	height: 80px;
 	border-radius: 0 5px 5px 0;
-	background: #ce1504;
+	background: #EE3524;
     color: #FFF;
     width: 15%;
+}
+
+.btn:hover {
+	background: #cf2010;
+	cursor: pointer;
+}
+/* Styles for "tell me what to read" text */
+
+.container > a {
+	display: table;
+	position:relative;
+    margin: 20px auto 0 auto;
+}
+
+.container > a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: #EE3524;
+	-webkit-transition: 1s ease;
+  	transition: 1s ease;
+}
+
+.container > a:hover:after {
+	width: 100%;
+}
+
+
+.container h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #4c4c4c;
+    margin: 0;
 }
