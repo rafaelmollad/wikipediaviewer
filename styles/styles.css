@@ -27,8 +27,24 @@ a {
 	text-decoration: none;
 }
 
-/* Wikipedia Viewer heading */
 
+.form {
+	display: flex;
+	justify-content: center;
+}
+
+
+.wrapper {
+	min-height: 100vh;
+}
+
+/* Container for title, search bar and 'tell me what to read' link */
+.main-container {
+	padding-top: calc(50vh - 95.9px);
+    margin-bottom: 50px;
+}
+
+/* Wikipedia Viewer heading */
 .title {
 	font-weight: 300;
     font-size: 3em;
@@ -38,24 +54,14 @@ a {
     margin-bottom: 15px;
 }
 
-/* Center content both vertically and horizontally */
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 50%;
-}
-
 /* SEARCH BAR */
-
 .fa {
 	font-size: 20px;
 }
 
 .form-search {
 	display: inline-block;
-	width: 85%;
+	flex-basis: 800px;
 }
 
 .form-search input {
@@ -99,6 +105,10 @@ a {
 	font-family: 'Montserrat', sans-serif;
 }
 
+
+
+
+/* Styles for search bar button */
 .btn {
 	border: 0;
 	padding: 0;
@@ -106,7 +116,7 @@ a {
 	border-radius: 0 5px 5px 0;
 	background: #EE3524;
     color: #FFF;
-    width: 15%;
+    flex-basis: 150px
 }
 
 .btn:hover {
@@ -115,13 +125,13 @@ a {
 }
 /* Styles for "tell me what to read" text */
 
-.container > a {
+.main-container > a {
 	display: table;
 	position:relative;
     margin: 20px auto 0 auto;
 }
 
-.container > a:after {
+.main-container > a:after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -132,12 +142,12 @@ a {
   	transition: 1s ease;
 }
 
-.container > a:hover:after {
+.main-container > a:hover:after {
 	width: 100%;
 }
 
 
-.container h2 {
+.main-container h2 {
     font-size: 1.5em;
     font-weight: 400;
     color: #4c4c4c;
