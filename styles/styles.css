@@ -74,6 +74,9 @@ a {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding-left: 20px;
+    color: #8b8b8b;
+    font-family: unset;
+    font-weight: 300;
 }
 
 /* Styles for input placeholder with support for different browsers */
