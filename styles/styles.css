@@ -116,12 +116,16 @@ a {
 	border-radius: 0 5px 5px 0;
 	background: #EE3524;
     color: #FFF;
-    flex-basis: 150px
+    flex-basis: 150px;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
 }
 
 .btn:hover {
 	background: #cf2010;
 	cursor: pointer;
+
 }
 /* Styles for "tell me what to read" text */
 
@@ -165,16 +169,10 @@ a {
     border-left: 1.5px solid red;
     font-weight: 300;
     padding-left: 5px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
 }
 
-.snippet:after {
-	content:'';
-	position:absolute;
-	width: 30px;
-	height: 30px;
-}
-
-.searchmatch:first-child {
+.searchmatch {
 	background: lightyellow;
 }

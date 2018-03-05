@@ -9,27 +9,31 @@ xhttp.onreadystatechange = function() {
 
 		console.log(jsonText);
 		console.log(jsonText.query.search.length);
-		console.log(jsonText.query.search[1].snippet);
 
 		// Number of objects retrieved by the query
 		var numberOfObjects = jsonText.query.search.length;
 
+		// If the search retrived at least one result
+		if (numberOfObjects > 0) {
 
-		// If there are h1 elements inside '#search-results'
-		// remove all of them because we're about to add new content to it
-		while (document.getElementById("search-results").firstChild) {
-			document.getElementById("search-results").removeChild(document.getElementById("search-results").firstChild);
+			// If there are h1 elements inside the div with the id '#search-results'
+			// remove all of them because we're about to add new content to it
+			while (document.getElementById("search-results").firstChild) {
+				document.getElementById("search-results").removeChild(document.getElementById("search-results").firstChild);
+			}
+
+			// For each snippet in the query result, create a h1 element
+			// then add the snippet to the h1 elements
+			// and finally append these elements inside the div with the id '#search-results'
+			for (i = 0; i < numberOfObjects; i++) {
+				var node = document.createElement("H1");
+				node.innerHTML = jsonText.query.search[i].snippet;
+				document.getElementById("search-results").appendChild(node).classList.add("snippet");
+			}
+		} else {
+			alert("Nothing was found :(\ndid you mean " + "'" + jsonText.query.searchinfo.suggestion + "'" + "?");
+
 		}
-
-		// For each snippet in the query result, create a h1 element
-		// then add the snippet to the h1 elements
-		// and finally append these elements inside the '#search-results'
-		for (i = 0; i < numberOfObjects; i++) {
-			var node = document.createElement("H1");
-			node.innerHTML = jsonText.query.search[i].snippet;
-			document.getElementById("search-results").appendChild(node).classList.add("snippet");
-		}
-
 	}	
 }
 
